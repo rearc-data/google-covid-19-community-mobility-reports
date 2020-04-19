@@ -1,0 +1,22 @@
+# Google COVID-19 Community Mobility Reports
+
+## DataSet description
+Google's COVID-19 Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.
+
+## Main Description
+Google's COVID-19 Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.
+
+Learn more about these reports through [this blog post](https://www.blog.google/technology/health/covid-19-community-mobility-reports) and [this documentation page](https://www.google.com/covid19/mobility/data_documentation.html).
+
+## More Information:
+- Source: [Google | COVID-19 Community Mobility Reports](https://www.google.com/covid19/mobility/)
+- Frequency: Daily
+
+## Contact Information
+If you have questions about the source data, please contact Google. If you have any questions about the CloudFormation stack, Lambda code or any of the AWS services being used, please contact data@rearc.io.
+
+## About Rearc
+Rearc is a cloud, software and services company. We believe that empowering engineers drives innovation. Cloud-native architectures, modern software and data practices, and the ability to safely experiment can enable engineers to realize their full potential. We have partnered with several enterprises and startups to help them achieve agility. Our approach is simple — empower engineers with the best tools possible to make an impact within their industry.
+
+## Refund Policy  
+Refunds Not Applicable
