@@ -1,6 +1,6 @@
 # Google COVID-19 Community Mobility Reports
 
-The source code outlining how this product gathers, transforms, revises and publishes its datasets is avaiable at [https://github.com/rearc-data/google-covid-19-community-mobility-reports](https://github.com/rearc-data/google-covid-19-community-mobility-reports).
+The source code outlining how this product gathers, transforms, revises and publishes its datasets is available at [https://github.com/rearc-data/google-covid-19-community-mobility-reports](https://github.com/rearc-data/google-covid-19-community-mobility-reports).
 
 ## Product Description
 Google's COVID-19 Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.
