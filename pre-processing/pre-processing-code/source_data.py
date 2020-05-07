@@ -1,8 +1,6 @@
-import os
 import boto3
 from urllib.request import urlopen, Request
 from html.parser import HTMLParser
-
 
 class MyHTMLParser(HTMLParser):
 
@@ -13,8 +11,8 @@ class MyHTMLParser(HTMLParser):
     def handle_starttag(self, tag, attr):
         if tag.lower() == 'a' and self.data == None:
             for item in attr:
-                if item[0].lower() == 'href' and item[1].endswith('.csv'):
-                    self.data = item[1]
+                if item[0].lower() == 'href' and '.csv' in item[1]:
+                    self.data = item[1].split('?', 1)[0]
 
 def source_dataset(new_filename, s3_bucket, new_s3_key):
 
@@ -31,11 +29,12 @@ def source_dataset(new_filename, s3_bucket, new_s3_key):
 
     csv_request = Request(parser.data, None, headers)
 
-    csv_file = urlopen(csv_request)
+    csv_file = urlopen(csv_request).read()
 
-    output = open('/tmp/' + new_filename, 'wb')
-    output.write(csv_file.read())
-    output.close()
+    with open('/tmp/' + new_filename, 'wb') as f:
+        f.write(csv_file)
 
     s3 = boto3.client('s3')
     s3.upload_file('/tmp/' + new_filename, s3_bucket, new_s3_key)
+
+    return [{'Bucket': s3_bucket, 'Key': new_s3_key}]
