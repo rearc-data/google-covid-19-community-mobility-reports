@@ -6,7 +6,7 @@
 
 You can subscribe to the AWS Data Exchange product utilizing the automation featured in this repository by visiting [https://aws.amazon.com/marketplace/pp/prodview-crrq42gujge3k](https://aws.amazon.com/marketplace/pp/prodview-crrq42gujge3k).
 
-## Product Description
+## Main Overview
 Google's COVID-19 Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.
 
 Learn more about these reports through [this blog post](https://www.blog.google/technology/health/covid-19-community-mobility-reports) and [this documentation page](https://www.google.com/covid19/mobility/data_documentation.html).
