@@ -3,7 +3,7 @@ import boto3
 from urllib.error import URLError, HTTPError
 from html.parser import HTMLParser
 from s3_md5_compare import md5_compare
-import os
+from io import BytesIO
 
 class MyHTMLParser(HTMLParser):
 
@@ -52,18 +52,13 @@ def source_dataset(new_filename, s3_bucket, new_s3_key):
 		else:
 
 			data = data_response.read()
-			file_location = '/tmp/' + new_filename
 
-			with open(file_location, 'wb') as f:
-				f.write(data)
-
-			# uploading new s3 dataset
 			s3_uploads = []
-			s3 = boto3.client('s3')
+			s3 = boto3.resource('s3')
 
-			has_changes = md5_compare(s3, s3_bucket, new_s3_key + new_filename, file_location)
+			has_changes = md5_compare(s3_bucket, new_s3_key + new_filename, BytesIO(data))
 			if has_changes:
-				s3.upload_file(file_location, s3_bucket, new_s3_key + new_filename)
+				s3.Object(s3_bucket, new_s3_key + new_filename).put(Body=data)
 				print('Uploaded: ' + new_filename)
 			else:
 				print('No changes in: ' + new_filename)
