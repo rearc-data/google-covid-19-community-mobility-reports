@@ -181,3 +181,5 @@ $RECYCLE.BIN/
 **/pre-processing-code.zip
 
 response.json
+.idea/
+venv/
