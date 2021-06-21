@@ -78,7 +78,7 @@ def source_dataset():
 			else:
 				print('No changes in: ' + new_s3_key)
 
-			asset_source = {'Bucket': asset_bucket, 'Key': new_s3_key + new_s3_key}
+			asset_source = {'Bucket': asset_bucket, 'Key': new_s3_key}
 			s3_uploads.append({'has_changes': has_changes, 'asset_source': asset_source})
 
 			count_updated_data = sum(upload['has_changes'] == True for upload in s3_uploads)
