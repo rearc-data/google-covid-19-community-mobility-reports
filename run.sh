@@ -7,7 +7,7 @@ DATASET_NAME='google-covid-19-community-mobility-reports'
 DATASET_ARN='arn:aws:dataexchange:us-east-1:796406704065:data-sets/2617a208e76a2a6ec53e337c32648776'
 PRODUCT_NAME='Google COVID-19 Community Mobility Reports'
 PRODUCT_ID='prod-eh4td62sesszk'
-SCHEDULE_CRON="cron(0 9 ? * 3 *)"
+SCHEDULE_CRON="cron(0 * * * ? *)"
 REGION='us-east-1'
 PROFILE='guardian-pg'
 
