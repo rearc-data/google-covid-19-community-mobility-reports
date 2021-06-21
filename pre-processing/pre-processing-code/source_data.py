@@ -2,7 +2,7 @@ from urllib.request import urlopen
 import boto3
 from urllib.error import URLError, HTTPError
 from html.parser import HTMLParser
-from s3_md5_compare import md5_compare
+from rearc_data_utils.s3_helper import s3_md5_compare as s3md5
 from io import BytesIO
 import os
 
@@ -70,7 +70,7 @@ def source_dataset():
 			obj_name = file_location.split('/', 3).pop().replace(' ', '_').lower()
 			new_s3_key = dataset_name + '/dataset/' + obj_name
 
-			has_changes = md5_compare(s3, asset_bucket, new_s3_key, BytesIO(filedata))
+			has_changes = s3md5.md5_compare(s3, asset_bucket, new_s3_key, BytesIO(filedata))
 			if has_changes:
 				s3_resource.Object(asset_bucket, new_s3_key).put(Body=filedata)
 				# s3.upload_file(file_location, asset_bucket, new_s3_key)

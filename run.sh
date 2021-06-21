@@ -1,15 +1,15 @@
-export REARC_DATA_PLATFORM_ROLE_ARN='arn:aws:iam::412981388937:role/CrossAccountRole-796406704065-796406704065'
-export REARC_DATA_PLATFORM_EXTERNAL_ID='Rearc-Data-Platform-796406704065'
-export ASSET_BUCKET='rearc-data-provider'
-export MANIFEST_BUCKET='rearc-control-plane-manifest'
-export CUSTOMER_ID='796406704065'
-export DATASET_NAME='google-covid-19-community-mobility-reports-platform'
-export DATASET_ARN='arn:aws:dataexchange:us-east-1:796406704065:data-sets/2617a208e76a2a6ec53e337c32648776'
-export PRODUCT_NAME='Google COVID-19 Community Mobility Reports'
-export PRODUCT_ID='prod-eh4td62sesszk'
-export SCHEDULE_CRON="cron(0 9 ? * 3 *)"
-export REGION='us-east-1'
-# export PROFILE='guardian-pg'
+REARC_DATA_PLATFORM_ROLE_ARN='arn:aws:iam::412981388937:role/CrossAccountRole-796406704065-796406704065'
+REARC_DATA_PLATFORM_EXTERNAL_ID='Rearc-Data-Platform-796406704065'
+ASSET_BUCKET='rearc-data-provider'
+MANIFEST_BUCKET='rearc-control-plane-manifest'
+CUSTOMER_ID='796406704065'
+DATASET_NAME='google-covid-19-community-mobility-reports'
+DATASET_ARN='arn:aws:dataexchange:us-east-1:796406704065:data-sets/2617a208e76a2a6ec53e337c32648776'
+PRODUCT_NAME='Google COVID-19 Community Mobility Reports'
+PRODUCT_ID='prod-eh4td62sesszk'
+SCHEDULE_CRON="cron(0 9 ? * 3 *)"
+REGION='us-east-1'
+PROFILE='guardian-pg'
 
 echo "------------------------------------------------------------------------------"
 echo "RearcDataPlatformRoleArn: $REARC_DATA_PLATFORM_ROLE_ARN"
@@ -39,7 +39,7 @@ echo "--------------------------------------------------------------------------
     --dataset-name "${DATASET_NAME}" \
     --product-name "${PRODUCT_NAME}" \
     --product-id "${PRODUCT_ID}" \
+    --dataset-arn "${DATASET_ARN}" \
     --region "${REGION}" \
-    --first-revision "false"
-    # --profile "${PROFILE}"
-
+    --first-revision "false" # \
+#    --profile "${PROFILE}"
